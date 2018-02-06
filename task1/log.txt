@@ -1,0 +1,11 @@
+commit 75740b4f08ab0118ecd948a639581f0dc99acc22 (HEAD -> master)
+Author: Alfadiktator <alfadiktator@gmail.com>
+Date:   Tue Feb 6 23:19:53 2018 +0300
+
+    add status.txt
+
+commit 718939244b9867058aed28cba9849b6d62bae658
+Author: Alfadiktator <alfadiktator@gmail.com>
+Date:   Tue Feb 6 23:17:46 2018 +0300
+
+    add .gitignore
