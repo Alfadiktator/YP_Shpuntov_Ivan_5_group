@@ -1,0 +1,153 @@
+body{
+    width:100%;
+    height:100%;
+    margin:0;
+    background-color:rgb(119, 116, 116);
+    overflow: hidden;
+}
+
+.wraper{
+    width:100vw;
+    height:100vh;
+    display:grid;
+    grid-template-rows: 60px 9fr 60px;
+}
+
+.header{
+    width:100vw;
+    background-color:rgb(108, 45, 243);
+    display: grid;
+    align-items: center;
+    grid-template-columns: 1fr 60px 1vw 60px;
+}
+
+.header-width-limiter{
+    display: grid;
+    align-items: center;
+    padding-left:1vw;
+}
+
+.staff{
+    overflow-y:scroll;
+    overflow-x: hidden;
+    width:100vw;
+    background-color:rgb(255, 255, 255);
+    display: flex;
+    flex-flow: column;
+}
+
+.image-box{
+    width:500px;
+    background-color:#fff;
+    border:2px solid black;
+    margin:2vh auto;
+    display: grid;
+    grid-template-rows: 60px calc(100% - 220px) 60px auto;
+}
+
+.image-head{
+    display: grid;
+    grid-template-columns: 1fr 30px 1vw 30px;
+    padding:10px 10px 15px 0;
+}
+
+.image-like{
+    display: grid;
+    align-content: center;
+    grid-template-columns: 30px 10px auto;
+    padding:5px 15px 15px 10px;
+}
+
+@media (max-width: 520px) {
+    .image-box{
+        width:100%;
+        margin:2vh 0;
+        background-color:rgb(255, 255, 255);
+    }
+    .footer{
+        grid-template-columns: 1fr auto 2vw auto 0 0 0 0 0 0 1fr;
+    }
+}
+
+@media (max-height: 720px) {
+    .image-box{
+        height:100%;
+        margin:2vh 0;
+        background-color:rgb(255, 255, 255);
+    } 
+}
+
+.image-staff{
+    width:100%;
+}
+
+.footer{
+    width:100vw;
+    background-color:rgb(93, 204, 248);
+    display: grid;
+    grid-template-columns: 1fr auto 2vw auto 2vw auto 2vw auto 2vw auto 1fr;
+}
+
+.search-btn{
+    height:100%;
+    width:100%;
+}
+
+.search-btn:hover:after{
+    position: absolute;
+    left: calc(100% - 300px);
+    top: 100px;
+    width:280px;
+    height:30vh;
+    background-color:rgb(16, 176, 224);
+    box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+}
+
+.menu-btn{
+    height:60px;
+    width:60px;
+}
+
+h2{
+    font-family: Brush Script MT, Brush Script Std, cursive;
+    font-weight: 200;
+    font-size: 3vh;
+    margin:0;
+}
+
+.redaction-btn, .delete-btn{
+    width:30px;
+    height:30px;
+}
+
+.like-btn{
+    width:30px;
+    height: 30px;
+    float: left;
+}
+
+.like-count{
+    font-weight: 600;
+    font-size:20px;
+}
+
+.like-text{
+    width:calc(100% - 30px);
+    height:30px;
+    display: flex;
+    align-items: center;
+}
+
+.image-info{
+    display:grid;
+    align-items: center;
+    padding-left:2%;
+}
+
+.image-desc{
+    font-weight: 200;
+}
+
+.hashtag{
+    text-decoration:none;
+}
