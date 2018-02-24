@@ -42,6 +42,11 @@ body{
     flex-flow: column;
 }
 
+.date{
+    color:rgb(116, 116, 116);
+    font-size:14px;
+}
+
 .image-box{
     width:500px;
     background-color:#fff;
@@ -66,10 +71,13 @@ body{
 
 @media (max-width: 520px) {
     .image-box{
-        width:100%;
+        width:calc(100% - 20px);
         margin-left:0;
-        margin-right:10vh;
+        margin-right:20px;
         background-color:rgb(255, 255, 255);
+    }
+    .todel{
+        display: none;
     }
 }
 
@@ -79,10 +87,10 @@ body{
 
 .footer{
     margin-top:1vh;
-    width:100vw;
+    width:calc(100vw - 20px);
     background-color:rgb(93, 204, 248);
     display: grid;
-    grid-template-columns: 1fr auto  auto  auto  auto  auto 1fr;
+    grid-template-columns:1fr auto auto auto auto auto 1fr;
 }
 
 .footer-block{
