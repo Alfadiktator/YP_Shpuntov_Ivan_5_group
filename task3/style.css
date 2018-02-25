@@ -4,6 +4,7 @@ body{
     margin:0;
     background-color:rgb(255, 255, 255);
     overflow: hidden;
+    z-index: 2;
 }
 
 
@@ -50,7 +51,7 @@ body{
 .image-box{
     width:500px;
     background-color:#fff;
-    border:2px solid black;
+    box-shadow: 0 2px 0 0 #d7d8db, 0 0 0 1px #e3e4e8;
     margin:2vh auto;
     display: grid;
     grid-template-rows: 60px calc(100% - 220px) 60px auto;
@@ -79,6 +80,9 @@ body{
     .todel{
         display: none;
     }
+    .filter-info{
+        min-width:60vw !important;
+    }
 }
 
 .image-staff{
@@ -88,7 +92,7 @@ body{
 .footer{
     margin-top:1vh;
     width:calc(100vw - 20px);
-    background-color:rgb(93, 204, 248);
+    background-color:rgb(177, 42, 255);
     display: grid;
     grid-template-columns:1fr auto auto auto auto auto 1fr;
 }
@@ -100,16 +104,6 @@ body{
 .search-btn{
     height:100%;
     width:100%;
-}
-
-.search-btn:hover:after{
-    position: absolute;
-    left: calc(100% - 300px);
-    top: 100px;
-    width:280px;
-    height:30vh;
-    background-color:rgb(16, 176, 224);
-    box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
 }
 
 .menu-btn{
@@ -161,4 +155,31 @@ h2{
 
 .hashtag{
     text-decoration:none;
+}
+
+.filter-info{
+    display:block;
+    position: absolute;
+    display:grid;
+    font-size: 20px;
+    min-width:400px;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    grid-gap:1vw;
+    padding:5px;
+    background-color:rgb(168, 19, 255);
+    box-shadow:0 2px 0 0 #5300be, 0 0 0 1px #5300be;
+    right:30px;
+    top:70px;
+    border-radius:10px;
+}
+
+.join-button{
+    font-size:20px;
+    color:#fff;
+    font-weight:600;
+    width:30%;
+    margin-left:70%;
+    border:0;
+    border-radius: 5px;
+    background-color:rgb(111, 0, 255);
 }

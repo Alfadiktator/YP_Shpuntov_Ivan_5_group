@@ -6,21 +6,28 @@
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
+        <div class="filter-info">
+            <h2>Filter</h2>
+            <input type="text" placeholder="Search...">
+            <div><div>From:</div><input id="date" type="date"></div>
+            <div><div>To:</div><input id="date" type="date"></div>
+            <button class="join-button">Join</button>
+        </div>
         <div class="wraper">
             <div class="header">
                 <div class="header-width-limiter"><h2>Username</h2></div>
-                <img class="search-btn" src="https://web.library.uq.edu.au/files/37556/search-icon.png"></img>
+                <a href="#"><img class="search-btn" src="https://web.library.uq.edu.au/files/37556/search-icon.png"></img></a>
                 <div></div>
-                <img class="menu-btn" src="https://www.evernote.com/redesign/business/BusinessHomeAction/letters/c_60px_1.png"></img>
+                <a href="#"><img class="menu-btn" src="https://www.evernote.com/redesign/business/BusinessHomeAction/letters/c_60px_1.png"></img></a>
             </div>
         <div class="wrap-staff-footer">
             <div class="staff">
                 <div class="image-box">
                     <div class="image-head">
                             <div class="header-width-limiter"><h2>Username</h2></div>
-                            <img class="edit-btn" src="https://image.freepik.com/free-icon/no-translate-detected_318-61160.jpg"></img>
+                            <a href="#"><img class="edit-btn" src="https://image.freepik.com/free-icon/no-translate-detected_318-61160.jpg"></img></a>
                             <div></div>
-                            <img class="delete-btn" src="https://www.shareicon.net/data/2016/09/01/822390_delete_512x512.png"></img>
+                            <a href="#"><img class="delete-btn" src="https://www.shareicon.net/data/2016/09/01/822390_delete_512x512.png"></img></a>
                     </div>
                     <img class="image-staff" src="https://www.nasa.gov/sites/default/files/blackhole_2.jpg"></img>
                     <div class="image-like">
@@ -36,9 +43,9 @@
                 <div class="image-box">
                         <div class="image-head">
                                 <div class="header-width-limiter"><h2>Username</h2></div>
-                                <img class="edit-btn" src="https://image.freepik.com/free-icon/no-translate-detected_318-61160.jpg"></img>
+                                <a href="#"><img class="edit-btn" src="https://image.freepik.com/free-icon/no-translate-detected_318-61160.jpg"></img></a>
                                 <div></div>
-                                <img class="delete-btn" src="https://www.shareicon.net/data/2016/09/01/822390_delete_512x512.png"></img>
+                                <a href="#"><img class="delete-btn" src="https://www.shareicon.net/data/2016/09/01/822390_delete_512x512.png"></img></a>
                         </div>
                         <img class="image-staff" src="https://www.nasa.gov/sites/default/files/blackhole_2.jpg"></img>
                         <div class="image-like">
@@ -67,5 +74,37 @@
             </div>
         </div>
         </div>
+        <script>
+            function filter(e){
+                e.preventDefault();           
+                if(c){
+                    b.style.display = 'none';
+                }
+                else{
+                    b.style.display = 'grid';
+                }
+                c=!c;
+            }
+            function like(e){
+                e.preventDefault();
+                if(e.target.getAttribute("like")==="0"){
+                    e.target.src="https://cdn0.iconfinder.com/data/icons/small-n-flat/24/678087-heart-512.png";
+                    e.target.setAttribute("like","1");
+                }
+                else{
+                    e.target.src="http://icons.iconarchive.com/icons/icons8/ios7/512/Messaging-Like-icon.png";
+                    e.target.setAttribute("like","0");
+                }
+            }
+            let b=document.getElementsByClassName("filter-info")[0];
+            let a=document.getElementsByClassName("search-btn")[0];
+            let d=document.getElementsByClassName("like-btn");
+            let c=true;
+            a.addEventListener("click",filter);
+            for(let i=0;i<d.length;i++){
+                d[i].setAttribute("like","0");
+                d[i].addEventListener("click",like);
+            }
+        </script>
     </body>
 </html>
