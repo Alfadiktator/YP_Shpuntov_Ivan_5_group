@@ -1,17 +1,19 @@
 let Module = (function () {
-        class PhotoPost {
-            constructor(author, createdAt, description, hashtags, photoLink, id) {
-                this.description = description;
-                this.createdAt = new Date(createdAt);
-                this.author = author;
-                this.photoLink = photoLink;
-                this.arrHash = hashtags.split("#").slice(1);
-                this.arrliker = new Array();
-                this.id = id;
-            }
+    const body = document.body;
+    console.log(body);
+    class PhotoPost {
+        constructor(author, createdAt, description, hashtags, photoLink, id) {
+            this.description = description;
+            this.createdAt = new Date(createdAt);
+            this.author = author;
+            this.photoLink = photoLink;
+            this.arrHash = hashtags.split("#").slice(1);
+            this.arrliker = new Array();
+            this.id = id;
         }
+    }
 
-     class PhotoArr {
+    class PhotoArr {
         constructor() {
             this.arr = [];
         }
@@ -33,7 +35,7 @@ let Module = (function () {
                 typeof photoPost.photoLink !== 'string' ||
                 typeof photoPost.id !== 'string' ||
                 !Array.isArray(photoPost.arrHash) ||
-                !(photoPost.createdAt instanceof Date)||
+                !(photoPost.createdAt instanceof Date) ||
                 !photoPost.id) {
                 return false;
             }
@@ -48,20 +50,20 @@ let Module = (function () {
             let clone = Object.assign({}, this.arr[ind]);
             console.log(clone);
             for (let prop in ToEdit) {
-                    if (clone.hasOwnProperty(prop)) {//А если в редакции будет плохая property,
-                        clone[prop] = ToEdit[prop];//стоит её добавить в properties фотопоста и тащить дальше?
-                    }
-                    else {
-                        console.log("Invalid edition");
-                        return false;
-                    }
-            }
-            if (this.validatePhotoPost(clone)) {
-                    this.arr[ind] = clone;
-            }
-            else {
+                if (clone.hasOwnProperty(prop)) {//А если в редакции будет плохая property,
+                    clone[prop] = ToEdit[prop];//стоит её добавить в properties фотопоста и тащить дальше?
+                }
+                else {
                     console.log("Invalid edition");
                     return false;
+                }
+            }
+            if (this.validatePhotoPost(clone)) {
+                this.arr[ind] = clone;
+            }
+            else {
+                console.log("Invalid edition");
+                return false;
             }
             return true;
         }
@@ -107,9 +109,15 @@ let Module = (function () {
             return this.arr[ind];
         }
     }
+    return {
+        PhotoPost,
+        PhotoArr,
+    }
+})();
 
 
-let photoPosts = new PhotoArr();
+
+/*let photoPosts = new PhotoArr();
 photoPosts.addPhotoPost(new PhotoPost('lol', '2018-02-23T23:02:42', 'asdasd', '#asfaasfa#efef#grgrd ', '#', '1'));
 photoPosts.addPhotoPost(new PhotoPost('kek', '2018-02-23T22:01:40', 'asfaf', '#fdfd #adfad#rrr', '#', '2'));
 photoPosts.addPhotoPost(new PhotoPost('lol', '2018-02-22T01:11:42', 'sdcsdc', '#devil#paradise#beast', '#', '3'));
@@ -198,13 +206,7 @@ console.log(photoPosts.removePhotoPost('3'));
 console.log('try to get id=3 post');
 console.log(photoPosts.getPhotoPost('3'));
 console.log('all posts: ');
-console.log(photoPosts);
-    return{
-        PhotoPost,
-        PhotoArr,
-    }
-})();
-
+console.log(photoPosts);*/
 
 
 

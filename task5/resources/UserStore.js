@@ -1,0 +1,14 @@
+module.exports=[
+    {
+        username:"Galante",
+        password:"thebest",
+    },
+    {
+        username:"Transsilver",
+        password:"dfvfdv",
+    },
+    {
+        username:"Echo",
+        password:"werwerwr",
+    },
+]
