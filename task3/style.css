@@ -39,8 +39,10 @@ body{
 .staff{
     width:100vw;
     background-color:rgb(255, 255, 255);
-    display: flex;
-    flex-flow: column;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,500px);
+    grid-template-rows: repeat(auto-fit,700px);
+    grid-gap:10px;
 }
 
 .date{

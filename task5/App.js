@@ -53,10 +53,25 @@ function addPhotoPostToDOM(photoPost, user) {
     staff.innerHTML = staff.innerHTML + imageBlock(photoPost, edit);
 }
 
+function editPost(e){
+    e.preventDefault();
+    const i=e.currentTarget.getAttribute('ind');
+    console.log(i);
+}
+
+function deletePost(e){
+    e.preventDefault();
+    const i=e.currentTarget.getAttribute('ind');
+    console.log(i);
+}
+
+
 module.exports = {
     filter,
     like,
     logOn,
     userMenu,
     addPhotoPostToDOM,
+    editPost,
+    deletePost,
 }

@@ -1,5 +1,5 @@
 const { PhotoArr, PhotoPost } = require('./PostLogic');
-const { filter, like, logOn,addPhotoPostToDOM ,userMenu} = require('./App');
+const { filter, like, logOn,addPhotoPostToDOM ,userMenu,editPost,deletePost} = require('./App');
 const initPage = require('./components/logon');
 const userStore = require('./resources/UserStore');
 const body = document.body;
@@ -29,9 +29,19 @@ let b = document.getElementsByClassName("filter-info")[0];
 let a = document.getElementsByClassName("search-btn")[0];
 let d = document.getElementsByClassName("like-btn");
 let c = document.getElementsByClassName("menu-btn")[0];
+let f = document.getElementsByClassName("edit-btn");
+let g = document.getElementsByClassName("delete-btn");
+
 c.addEventListener("click",userMenu);
 a.addEventListener("click", filter);
+
 for (let i = 0; i < d.length; i++) {
     d[i].setAttribute("like", "0");
     d[i].addEventListener("click", like);
+}
+for(let i=0;i<f.length;i++){
+    f[i].addEventListener("click",editPost);
+}
+for(let i=0;i<g.length;i++){
+    g[i].addEventListener("click",deletePost);
 }
