@@ -1,5 +1,4 @@
 module.exports = function (photoPost,editmatch) {
-    console.log(arguments);
     let date=photoPost.createdAt.toString().match(/.+GMT/)[0];
     date=date.substring(4,date.length-4);
     return (
@@ -12,7 +11,7 @@ module.exports = function (photoPost,editmatch) {
             </div>
             <img class="image-staff" src=${photoPost.photoLink}></img>
             <div class="image-like">
-                <img class="like-btn" src="http://icons.iconarchive.com/icons/icons8/ios7/512/Messaging-Like-icon.png"></img>
+                <img ind=${photoPost.id} class="like-btn" src="http://icons.iconarchive.com/icons/icons8/ios7/512/Messaging-Like-icon.png"></img>
                 <div></div>
                 <div class="like-text">
                     <b class="like-count">${photoPost.arrLiker.length}</b>

@@ -37,10 +37,11 @@ body{
 }
 
 .staff{
+    padding-left:10px;
     width:100vw;
     background-color:rgb(255, 255, 255);
     display: grid;
-    grid-template-columns: repeat(auto-fit,500px);
+    grid-template-columns: 1fr;
     grid-template-rows: repeat(auto-fit,700px);
     grid-gap:10px;
 }
@@ -52,11 +53,13 @@ body{
 
 .image-box{
     width:500px;
+    height: 690px;
+    transition:height 0.3s;
     background-color:#fff;
     box-shadow: 0 2px 0 0 #d7d8db, 0 0 0 1px #e3e4e8;
     margin:2vh auto;
     display: grid;
-    grid-template-rows: 60px calc(100% - 220px) 60px auto;
+    grid-template-rows: 60px 500px 60px 70px;
 }
 
 .image-head{
@@ -83,11 +86,15 @@ body{
         display: none;
     }
     .filter-info{
-        min-width:60vw !important;
+        min-width:40vw !important;
+    }
+    .footer{
+        width:100vw !important;
     }
 }
 
 .image-staff{
+    height:500px;
     width:100%;
 }
 
@@ -200,6 +207,7 @@ h2{
     color:#fff;
     font-weight:400;
     border:0;
+    border-top: 2px solid black;
     border-radius: 5px;
     background-color:rgb(111, 0, 255);
 }
@@ -212,7 +220,7 @@ h2{
 .background{
     width:100vw;
     height:100vh;
-    background-image:url( https://cs.pikabu.ru/post_img/big/2013/09/07/8/1378552690_1097248107.jpg);
+    background-image:url( https://image.ibb.co/jpMUqS/image.png);
     background-size:cover;
     display:grid;
     border-radius: 10px;
@@ -262,7 +270,8 @@ h2{
     position: absolute;
     right:20px;
     border-radius:5px;
-    top:100px;
+    top:61px;
+    padding:3px;
     background-color:rgba(112, 85, 173, 0.842);
     display:none;
     height:100px;
@@ -278,8 +287,5 @@ h2{
     border-radius:5px;
     color:#fff;
     border: 0;
-}
-
-#userMenuTitle{
-    border-bottom: 2px solid black;
+    border-top: 2px solid black;
 }
